@@ -6,6 +6,7 @@ import {
   Link,
   Seo,
 } from '@shopify/hydrogen'
+import { Suspense } from 'react'
 
 /**
  * A Server componenent that defines a structure and organization of a page that can be used in different parts of the Hydrogen app
@@ -24,13 +25,15 @@ export function Layout({ children }) {
 
   return (
     <>
-      <Seo
-        type="defaultSeo"
-        data={{
-          title: shop.name,
-          description: shop.description,
-        }}
-      />
+      <Suspense>
+        <Seo
+          type="defaultSeo"
+          data={{
+            title: shop.name,
+            description: shop.description,
+          }}
+        />
+      </Suspense>
       <div className="flex flex-col min-h-screen antialiased bg-neutral-50">
         <div className="">
           <a href="#mainContent" className="sr-only">
@@ -51,7 +54,7 @@ export function Layout({ children }) {
         </header>
 
         <main role="main" id="mainContent" className="flex-grow">
-          {children}
+          <Suspense>{children}</Suspense>
         </main>
       </div>
     </>
