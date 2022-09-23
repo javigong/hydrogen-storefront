@@ -20,8 +20,20 @@ export default function Product() {
     },
   })
 
+  // Implement Shopify Analytics
+  useServerAnalytics({
+    shopify: {
+      pageType: ShopifyAnalyticsConstants.pageType.product,
+      resourceId: product.id,
+    },
+  })
+  // Implement an `Seo` component for the product. By specifying "type=product"
+  // you're overriding the `defaultSeo` type in the Layout component.
   return (
     <Layout>
+      <Suspense>
+        <Seo type="product" data={product} />
+      </Suspense>
       <section className="p-6 md:p-8 lg:p-12">
         This will be the product page for <strong>{handle}</strong>
       </section>
