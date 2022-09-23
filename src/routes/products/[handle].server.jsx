@@ -40,6 +40,8 @@ export default function Product({ params }) {
   );
 }
 
+// Retrieve product media in preparation for the next step in the tutorial:
+// Step 4: Add a product gallery
 const PRODUCT_QUERY = gql`
   fragment MediaFields on Media {
     mediaContentType
