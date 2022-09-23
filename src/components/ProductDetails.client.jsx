@@ -31,7 +31,7 @@ export default function ProductDetails({ product }) {
   )
 }
 
-function ProductGalley({ media }) {
+function ProductGallery({ media }) {
   if (!media.length) {
     return null
   }
