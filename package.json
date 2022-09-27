@@ -10,7 +10,11 @@
   "scripts": {
     "dev": "shopify hydrogen dev",
     "build": "shopify hydrogen build",
-    "preview": "shopify hydrogen preview"
+    "preview": "shopify hydrogen preview",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx src",
+    "lint-ts": "tsc --noEmit",
+    "test": "WATCH=true vitest",
+    "test:ci": "yarn build -t node && vitest run"
   },
   "devDependencies": {
     "@shopify/cli": "3.13.1",
