@@ -2,7 +2,7 @@
 
 Hydrogen is a React framework and SDK that you can use to build fast and dynamic Shopify custom storefronts.
 
-- [Live Site (Vercel)](https://hydrogen-storefront-4wgq5creb-javigong.vercel.app/)
+- [Live Site (Vercel)](https://hydrogen-storefront.vercel.app/)
 
 - Screenshots
 
